@@ -5,6 +5,22 @@
     user-select: none;
 }
 
+*::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 3px solid rgb(245, 170, 170);
+    cursor: pointer;
+}
+
 body {
     background-color: #35858b;
     font-family: 'Roboto', sans-serif;
@@ -25,7 +41,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
     padding: 50px 20px;
     text-align: center;
-    max-width: 100;
+    max-width: 100%;
     width: 800px;
 }
 
@@ -99,4 +115,24 @@ span:hover {
 }
 .navbarListItem:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 780px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        height: 400px;
+        margin-bottom: 40px;
+    }
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+    h2 {
+        font-size: 1rem;
+    }
 }

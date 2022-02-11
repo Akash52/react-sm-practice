@@ -8,6 +8,18 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'assets/js/[name].[contenthash:8].js',
+        publicPath: '/',
+    },
+    devServer: {
+        // proxy: {
+        //     '/': {
+        //         target: 'http://localhost:5000',
+        //         secure: false,
+        //     },
+        // },
+        historyApiFallback: true,
+        port: 3000,
+        open: true,
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -69,15 +81,4 @@ module.exports = {
             },
         }),
     ],
-    devServer: {
-        historyApiFallback: true,
-        port: 3000,
-        open: true,
-        proxy: {
-            '/': {
-                target: 'http://localhost:5000',
-                secure: false,
-            },
-        },
-    },
 };
