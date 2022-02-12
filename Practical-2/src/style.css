@@ -26,7 +26,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.card {
     background-color: #fdebf7;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
@@ -36,7 +36,7 @@ body {
     width: 800px;
 }
 
-.box {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,6 +56,7 @@ body {
 
 h2 {
     color: #362222;
+    margin-top: 20px;
 }
 
 h4 {
@@ -134,8 +135,83 @@ a {
     text-decoration: none;
 }
 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+.profile-card {
+    background-color: #fdebf7;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    text-align: center;
+    width: 400px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.profile-card img {
+    position: relative;
+    top: -40px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+.profile-card img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.profile-card h3 {
+    color: #362222;
+    margin-bottom: 10px;
+}
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.input-search {
+    display: flex;
+    padding: 0 16px;
+    outline: none;
+    border: none;
+    height: 38px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3c3c3c;
+}
+.search-btn {
+    height: 38px;
+    width: 38px;
+    color: #524a4e;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 @media (max-width: 780px) {
-    .container {
+    .card {
         display: flex;
         flex-direction: column;
         align-items: center;
