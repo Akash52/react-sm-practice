@@ -24,15 +24,6 @@
 body {
     background-color: #35858b;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0%;
-    padding: 20px;
-    line-height: 1.5rem;
 }
 
 .container {
@@ -43,6 +34,18 @@ body {
     text-align: center;
     max-width: 100%;
     width: 800px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0%;
+    padding: 20px;
+    line-height: 1.5rem;
 }
 
 .items {
@@ -115,6 +118,20 @@ span:hover {
 }
 .navbarListItem:hover {
     opacity: 0.8;
+}
+
+.btn {
+    background-color: #00aeff;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+}
+a {
+    text-decoration: none;
 }
 
 @media (max-width: 780px) {

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {FaHome, FaCode, FaUser, FaQuestion} from 'react-icons/fa';
-import {useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const Navbar: FC = () => {
     const navigate = useNavigate();

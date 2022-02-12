@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import NotFound from './Pages/NotFound';
+import Profile from './Pages/Profile';
 import Navbar from './Components/Navbar';
 
 const App: FC = () => {
@@ -12,6 +13,7 @@ const App: FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
             <Navbar />
         </Router>
