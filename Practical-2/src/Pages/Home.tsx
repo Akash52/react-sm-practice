@@ -1,6 +1,6 @@
 import React from 'react';
 import {FC} from 'react';
-import IPInfoCard from '../Components/IPInfoCard';
+import IPInfoCard from '../Components/IPCard';
 
 const Home: FC = () => {
     return (
