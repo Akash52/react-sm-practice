@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FaHome, FaCode, FaUser, FaQuestion} from 'react-icons/fa';
+import {FaHome, FaUser, FaQuestion} from 'react-icons/fa';
 import {useNavigate} from 'react-router-dom';
 
 const Navbar: FC = () => {
@@ -17,19 +17,13 @@ const Navbar: FC = () => {
                     </li>
                     <li
                         className="navbarListItem"
-                        onClick={() => navigate('/hooks')}>
-                        <FaCode />
-                        <p>Hooks</p>
-                    </li>
-                    <li
-                        className="navbarListItem"
                         onClick={() => navigate('/profile')}>
                         <FaUser />
                         <p>Profile</p>
                     </li>
                     <li
                         className="navbarListItem"
-                        onClick={() => navigate('/profile')}>
+                        onClick={() => navigate('/help')}>
                         <FaQuestion />
                         <p>Help</p>
                     </li>
