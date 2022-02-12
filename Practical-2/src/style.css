@@ -214,6 +214,17 @@ h1 {
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.about {
+    padding: 20px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fdebf7;
+    border-radius: 10px;
+    max-width: 600px;
+    color: #3498db;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
 
 .loader {
     border: 16px solid #f3f3f3;
