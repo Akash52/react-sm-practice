@@ -11,9 +11,9 @@ const App: FC = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="/help" element={<About />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Navbar />
         </Router>

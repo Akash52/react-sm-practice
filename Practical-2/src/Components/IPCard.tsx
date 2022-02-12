@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import {FC, useEffect, useState} from 'react';
 import {fetchData} from '../services/index';
 import {IPInfo} from '../interface';
@@ -19,7 +19,7 @@ const IPInfoCard: FC = () => {
         postal,
         country_area,
         country_population,
-        org,
+        country_calling_code,
     } = ipInfo;
 
     useEffect(() => {
@@ -30,8 +30,8 @@ const IPInfoCard: FC = () => {
     }, []);
 
     return (
-        <Suspense fallback={<h1>Loading...</h1>}>
-            <div className="container ">
+        <>
+            <div className="container">
                 <div className="card">
                     <Search />
                     <h2>{ip}</h2>
@@ -73,7 +73,7 @@ const IPInfoCard: FC = () => {
                                 {country_population}
                             </h4>
                             <h4>
-                                <span>Org</span> {org}
+                                <span>Calling code</span> {country_calling_code}
                             </h4>
                             <h4>
                                 <span>Timezone</span> {timezone}
@@ -82,7 +82,7 @@ const IPInfoCard: FC = () => {
                     </div>
                 </div>
             </div>
-        </Suspense>
+        </>
     );
 };
 

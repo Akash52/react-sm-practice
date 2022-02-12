@@ -13,21 +13,11 @@ export interface IPInfo {
     country_population: number;
     org: string;
     latitude: number;
+    country_calling_code: number;
 }
 
 export interface CharType {
     id: number;
     name: string;
-    total: string;
-    email: string;
-    phone: string;
-    address: string;
-    city: string;
-    state: string;
-    zip: string;
-    country: string;
-    website: string;
-    company: string;
-    avatar: string;
     image: string;
 }

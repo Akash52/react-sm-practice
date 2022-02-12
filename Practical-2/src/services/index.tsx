@@ -1,5 +1,6 @@
 const url_ip = 'https://ipapi.co/json/';
-const url_hp = 'http://hp-api.herokuapp.com/api/characters';
+const url_hp =
+    'https://raw.githubusercontent.com/Akash52/practice-repo/master/db.json';
 
 export const fetchData = async () => {
     try {
