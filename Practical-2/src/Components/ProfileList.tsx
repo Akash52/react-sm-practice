@@ -18,6 +18,7 @@ const ProfileList: FC = () => {
                     <div className="profile-card">
                         <img src={profile.image} alt="profile" />
                         <h2>{profile.name}</h2>
+                        <p>{profile.interpretedBy}</p>
                     </div>
                 </div>
             ))}

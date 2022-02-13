@@ -20,4 +20,5 @@ export interface CharType {
     id: number;
     name: string;
     image: string;
+    interpretedBy: string;
 }

@@ -166,8 +166,8 @@ p {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    margin-bottom: 10px;
     object-fit: cover;
+    object-position: top;
     transition: 0.3s ease-in-out;
 }
 .profile-card img:hover {
@@ -178,6 +178,10 @@ p {
 .profile-card h3 {
     color: #362222;
     margin-bottom: 10px;
+}
+p {
+    color: #888;
+    font-size: 1rem;
 }
 h1 {
     color: #fff;
