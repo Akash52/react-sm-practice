@@ -5,7 +5,7 @@ import {IPInfo} from '../interface';
 import Search from './Search';
 
 const IPInfoCard: FC = () => {
-    const [ipInfo, setIpInfo] = useState<IPInfo[{}]>({});
+    const [ipInfo, setIpInfo] = useState<IPInfo>({} as IPInfo);
     const {
         ip,
         version,
@@ -29,11 +29,15 @@ const IPInfoCard: FC = () => {
         fetchApi();
     }, []);
 
-    const searchIP = async (ip) => {
+    const searchIP = async (ip: string) => {
         const response = await fetch(`https://ipapi.co/${ip}/json/`);
         const data = await response.json();
         setIpInfo(data);
     };
+
+    if (!ipInfo || ipInfo.length === 0) {
+        return <p>No Ip data Found</p>;
+    }
 
     return (
         <>
