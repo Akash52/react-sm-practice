@@ -1,4 +1,5 @@
 export interface IPInfo {
+    length: number;
     ip: string;
     version: string;
     city: string;

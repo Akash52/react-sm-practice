@@ -3,9 +3,11 @@ import {FC, useEffect, useState} from 'react';
 import {fetchData} from '../services/index';
 import {IPInfo} from '../interface';
 import Search from './Search';
+import Spinner from './Spinner';
 
 const IPInfoCard: FC = () => {
     const [ipInfo, setIpInfo] = useState<IPInfo>({} as IPInfo);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const {
         ip,
         version,
@@ -23,10 +25,12 @@ const IPInfoCard: FC = () => {
     } = ipInfo;
 
     useEffect(() => {
+        setIsLoading(true);
         const fetchApi = async () => {
             setIpInfo(await fetchData());
         };
         fetchApi();
+        setIsLoading(false);
     }, []);
 
     const searchIP = async (ip: string) => {
@@ -39,7 +43,9 @@ const IPInfoCard: FC = () => {
         return <p>No Ip data Found</p>;
     }
 
-    return (
+    return isLoading ? (
+        <Spinner />
+    ) : (
         <>
             <div className="container">
                 <div className="card">
