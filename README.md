@@ -1,2 +1,2 @@
 # react-sm-practice
-[Live Demo](https://react-sm-pr-2.netlify.app/)
+[Live Demo](https://eact-sm-pr-2.netlify.app/)
