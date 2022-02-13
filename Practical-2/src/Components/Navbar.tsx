@@ -23,9 +23,9 @@ const Navbar: FC = () => {
                     </li>
                     <li
                         className="navbarListItem"
-                        onClick={() => navigate('/help')}>
+                        onClick={() => navigate('/about')}>
                         <FaQuestion />
-                        <p>Help</p>
+                        <p>About</p>
                     </li>
                 </ul>
             </nav>
