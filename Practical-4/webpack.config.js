@@ -53,7 +53,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader',
+                    'postcss-loader',
+                ],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
