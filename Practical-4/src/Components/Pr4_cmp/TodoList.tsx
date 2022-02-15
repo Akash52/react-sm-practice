@@ -100,7 +100,7 @@ const Todo: FC = () => {
                             ))}
                         </div>
                     </div>
-                    <button className="bg-green-500 absolute hover:ring-4 ring-green-200 opacity-95 -bottom-2 left-0 right-0 mx-auto  text-white font-bold py-4 px-4 rounded-full">
+                    <button className="bg-green-500 absolute hover:ring-4 ring-green-200 -bottom-2 left-0 right-0 mx-auto  text-white font-bold py-4 px-4 rounded-full">
                         <FaPlus />
                     </button>
                 </div>
