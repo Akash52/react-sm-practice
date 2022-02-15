@@ -99,7 +99,7 @@ const Todo: FC = () => {
                                 </div>
                             ))}
 
-                            <button className="absolute -bottom-7 ml-2 translate-x-24 text-muted justify-center items-center btn_Add">
+                            <button className="absolute -bottom-7 ml-3 translate-x-24 text-muted justify-center items-center btn_Add">
                                 +
                             </button>
                         </div>
