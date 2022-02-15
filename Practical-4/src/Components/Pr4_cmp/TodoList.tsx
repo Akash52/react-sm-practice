@@ -99,13 +99,9 @@ const Todo: FC = () => {
                                 </div>
                             ))}
 
-                            <button className="absolute -bottom-7 translate-x-24 text-muted justify-center items-center btn_Add">
+                            <button className="absolute -bottom-7 ml-2 translate-x-24 text-muted justify-center items-center btn_Add">
                                 +
                             </button>
-
-                            {/* <button className="bg-green-500 absolute hover:ring-4 ring-green-200   text-white font-bold py-4 px-4 rounded-full">
-                        <FaPlus />
-                    </button> */}
                         </div>
                     </div>
                 </div>
