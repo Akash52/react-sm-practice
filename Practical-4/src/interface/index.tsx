@@ -23,3 +23,9 @@ export interface CharType {
     image: string;
     interpretedBy: string;
 }
+
+export interface Todos {
+    id: number;
+    name: string;
+    complete: boolean;
+}
