@@ -53,10 +53,10 @@ const Todo: FC = () => {
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
                 <div className="max-w-sm relative">
-                    <div className="w-full descr bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-3 py-5 px-4">
+                    <div className="w-full descr bg-white  rounded-lg shadow-lg mb-3 py-5 px-4">
                         <div className="mb-4 bg flex justify-between items-center p-2 sticky top-0">
                             <div className="flex justify-center items-center">
-                                <h2 className="text-gray-800 mr-1 -tracking-widest dark:text-gray-100 text-5xl font-medium mb-4">
+                                <h2 className="text-gray-800 mr-1 -tracking-widest text-5xl font-medium mb-4">
                                     {date}
                                 </h2>
                                 <div className="-mt-3  text-sm -ml-[6px] p-1  text-gray-700">
