@@ -52,9 +52,9 @@ const Todo: FC = () => {
     return (
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
-                <div className="max-w-sm relative ">
-                    <div className="w-full descr bg-white rounded-lg shadow-lg mb-3 py-5 px-4">
-                        <div className="mb-4 bg flex justify-between items-center p-2 sticky top-0">
+                <div className="max-w-sm ">
+                    <div className="w-full relative  descr bg-white rounded-lg shadow-lg mb-3 py-5 px-4">
+                        <div className="mb-4 bg flex justify-between items-center p-2 ">
                             <div className="flex justify-center items-center">
                                 <h2 className="text-gray-800 mr-2 -tracking-widest text-5xl font-medium mb-4">
                                     {date}
@@ -99,15 +99,15 @@ const Todo: FC = () => {
                                 </div>
                             ))}
 
-                            <button className="absolute text-muted btn_Add -bottom-4 left-0 right-0 mx-auto">
+                            <button className="absolute -bottom-7 translate-x-24 text-muted justify-center items-center btn_Add">
                                 +
                             </button>
-                        </div>
-                    </div>
 
-                    {/* <button className="bg-green-500 absolute hover:ring-4 ring-green-200   text-white font-bold py-4 px-4 rounded-full">
+                            {/* <button className="bg-green-500 absolute hover:ring-4 ring-green-200   text-white font-bold py-4 px-4 rounded-full">
                         <FaPlus />
                     </button> */}
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
