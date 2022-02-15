@@ -52,8 +52,8 @@ const Todo: FC = () => {
     return (
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
-                <div className="max-w-sm relative">
-                    <div className="w-full descr bg-white  rounded-lg shadow-lg mb-3 py-5 px-4">
+                <div className="max-w-sm relative ">
+                    <div className="w-full descr bg-white rounded-lg shadow-lg mb-3 py-5 px-4">
                         <div className="mb-4 bg flex justify-between items-center p-2 sticky top-0">
                             <div className="flex justify-center items-center">
                                 <h2 className="text-gray-800 mr-2 -tracking-widest text-5xl font-medium mb-4">
@@ -98,11 +98,16 @@ const Todo: FC = () => {
                                     </div>
                                 </div>
                             ))}
+
+                            <button className="absolute text-muted btn_Add -bottom-4 left-0 right-0 mx-auto">
+                                +
+                            </button>
                         </div>
                     </div>
-                    <button className="bg-green-500 absolute hover:ring-4 ring-green-200 -bottom-2 left-0 right-0 mx-auto  text-white font-bold py-4 px-4 rounded-full">
+
+                    {/* <button className="bg-green-500 absolute hover:ring-4 ring-green-200   text-white font-bold py-4 px-4 rounded-full">
                         <FaPlus />
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </>

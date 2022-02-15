@@ -14,11 +14,6 @@ const Navbar: FC = () => {
                             <i className="m-2 text-lg text-white opacity-75 fa-solid fa-laptop leading-lg animate-pulse"></i>
                             Simfrom ReactJS 😃
                         </Link>
-                        <button
-                            className="block px-3 py-1 text-xl leading-none text-white bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer lg:hidden focus:outline-none"
-                            type="button">
-                            <i className="fas fa-bars " />
-                        </button>
                     </div>
                     <div
                         className="lg:flex flex-grow items-center hidden"
