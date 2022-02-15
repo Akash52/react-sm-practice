@@ -2,6 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+
 const path = require('path');
 
 module.exports = {
@@ -52,14 +53,15 @@ module.exports = {
                 ],
             },
             {
-                test: /\.css$/,
+                test: /\.(css|scss|sass)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader',
                     'postcss-loader',
+                    'sass-loader',
                 ],
             },
+
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
                 use: {
