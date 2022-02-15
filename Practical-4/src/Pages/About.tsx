@@ -1,19 +1,34 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
+import about from '../data/about';
 
 const About: FC = () => {
+    const [aboutData, setAboutData] = React.useState(about);
     return (
-        <div className="container">
-            <h1>About</h1>
-            <h3 className="about">
-                <strong>In </strong> these project we implemented major React
-                concept like React Components, <strong> Hooks </strong> , State
-                Management , Prop Passing , React Router , React-icons for
-                create our UI , we handle <strong>404</strong> error using
-                NotFound page & also we called 2 API 1st one is{' '}
-                <strong>IP Info </strong> Provide current device IP information
-                like region , city , country etc. & 2nd one is a simply provide{' '}
-                <strong> Harry Potter </strong> cast details .
-            </h3>
+        <div className="container flex flex-col align-middle mx-auto justify-center">
+            <div className="  bg-slate-800 p-12 m-12 cursor-pointer duration-500  rounded-lg shadow-2xl justify-center hover:bg-gray-900">
+                <h1 className=" font-semibold text-4xl text-white mb-5 text-center">
+                    About
+                </h1>
+                {aboutData.slice(0, 1).map((item, index) => (
+                    <div key={index}>
+                        <div className=" flex justify-between border-b-2">
+                            <h1 className="font-black text-3xl  sm:text-center text-gray-100  lg:text-left">
+                                Practical 2{' '}
+                            </h1>
+                            <a
+                                href={item.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="font-normal text-xl text-gray-200">
+                                Live Demo
+                            </a>
+                        </div>
+                        <h3 className="about ml-4 text-xl mb-6 mt-3 sm:text-center  text-slate-200 first-letter:text-2xl">
+                            {item.des}
+                        </h3>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

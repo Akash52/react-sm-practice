@@ -1,18 +1,21 @@
 import React, {FC} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import {About, NotFound, Profile, Home} from './Pages';
+
+import Navbar from './Layout/Navbar';
+import {About, NotFound, Profile, Home, IpInfo} from './Pages';
 
 const App: FC = () => {
     return (
         <Router>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/ipinfo" element={<IpInfo />} />
                 <Route path="/profile" element={<Profile />} />
+
                 <Route path="*" element={<NotFound />} />
             </Routes>
-            <Navbar />
         </Router>
     );
 };
