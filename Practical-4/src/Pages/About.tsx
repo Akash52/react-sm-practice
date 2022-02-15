@@ -1,5 +1,22 @@
-import React, {FC, useState} from 'react';
-import about from '../data/about';
+import React, {FC} from 'react';
+
+const about = [
+    {
+        title: 'Practical 2',
+        link: 'https://react-pr2-akash.netlify.app/',
+        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
+    },
+    {
+        title: 'Practical 4',
+        link: 'https://react-pr2-akash.netlify.app/',
+        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
+    },
+    {
+        title: 'Practical 3',
+        link: 'https://react-pr2-akash.netlify.app/',
+        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
+    },
+];
 
 const About: FC = () => {
     const [aboutData, setAboutData] = React.useState(about);
@@ -13,7 +30,7 @@ const About: FC = () => {
                     <div key={index}>
                         <div className=" flex justify-between border-b-2">
                             <h1 className="font-black text-3xl  sm:text-center text-gray-100  lg:text-left">
-                                Practical 2{' '}
+                                {item.title}
                             </h1>
                             <a
                                 href={item.link}

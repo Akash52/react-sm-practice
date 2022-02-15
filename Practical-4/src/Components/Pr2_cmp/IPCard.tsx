@@ -51,7 +51,7 @@ const IPInfoCard: FC = () => {
                 <div className="card  bg-slate-300">
                     <Search searchIP={searchIP} name={''} />
                     <h2>{ip}</h2>
-                    <div className="items">
+                    <div className="items iph">
                         <div>
                             <h4>
                                 <span>Version</span> {version}
