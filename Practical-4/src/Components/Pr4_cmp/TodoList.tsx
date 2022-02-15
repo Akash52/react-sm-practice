@@ -56,7 +56,7 @@ const Todo: FC = () => {
                     <div className="w-full descr bg-white  rounded-lg shadow-lg mb-3 py-5 px-4">
                         <div className="mb-4 bg flex justify-between items-center p-2 sticky top-0">
                             <div className="flex justify-center items-center">
-                                <h2 className="text-gray-800 mr-1 -tracking-widest text-5xl font-medium mb-4">
+                                <h2 className="text-gray-800 mr-2 -tracking-widest text-5xl font-medium mb-4">
                                     {date}
                                 </h2>
                                 <div className="-mt-3  text-sm -ml-[6px] p-1  text-gray-700">
