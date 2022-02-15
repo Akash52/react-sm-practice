@@ -99,8 +99,8 @@ const Todo: FC = () => {
                                 </div>
                             ))}
 
-                            <button className="absolute -bottom-7 ml-3 translate-x-24 text-muted justify-center items-center btn_Add">
-                                +
+                            <button className="absolute -bottom-7  font-extralight ml-3 rounded-full translate-x-24 justify-center items-center py-5 px-5  btn_Add">
+                                <FaPlus className="  font-sans" />
                             </button>
                         </div>
                     </div>

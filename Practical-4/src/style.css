@@ -47,12 +47,7 @@ body {
 }
 
 .btn_Add {
-    font-size: xx-large;
-    border: none;
-    outline: none;
-    padding: 6px 21px;
     border-radius: 50%;
-    cursor: pointer;
     color: #58a758 !important;
     background-color: rgb(0, 230, 110) !important;
 }
