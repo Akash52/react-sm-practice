@@ -48,8 +48,8 @@ body {
 
 .btn_Add {
     border-radius: 50%;
-    color: #58a758 !important;
-    background-color: rgb(0, 230, 110) !important;
+    color: #58a758;
+    background-color: rgb(0, 230, 110);
 }
 
 .items {

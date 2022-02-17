@@ -52,7 +52,7 @@ const Todo: FC = () => {
     return (
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
-                <div className="max-w-sm ">
+                <div className="max-w-sm">
                     <div className="w-full relative  descr bg-white rounded-lg shadow-lg mb-3 py-5 px-4">
                         <div className="mb-4 bg flex justify-between items-center p-2 ">
                             <div className="flex justify-center items-center">
@@ -99,7 +99,7 @@ const Todo: FC = () => {
                                 </div>
                             ))}
 
-                            <button className="absolute -bottom-7  font-extralight ml-3 rounded-full translate-x-24 justify-center items-center py-5 px-5  btn_Add">
+                            <button className="absolute -bottom-7   font-extralight ml-3 rounded-full translate-x-24 justify-center items-center py-5 px-5  btn_Add">
                                 <FaPlus />
                             </button>
                         </div>
