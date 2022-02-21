@@ -1,11 +1,11 @@
 import React from 'react';
 import {FC} from 'react';
-import Todo from '../Components/Pr4_cmp/TodoList';
+import TodoList from '../Components/Todo/TodoList';
 
 const Home: FC = () => {
     return (
         <>
-            <Todo />
+            <TodoList />
         </>
     );
 };
