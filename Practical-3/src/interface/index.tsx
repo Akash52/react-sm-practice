@@ -25,7 +25,9 @@ export interface CharType {
 }
 
 export interface Todos {
-    id: number;
-    name: string;
-    complete: boolean;
+    _id: string;
+    todo: string;
+    completed: boolean;
+    createdAt?: string;
+    updatedAt?: string;
 }
