@@ -12,6 +12,16 @@
     -o-user-select: none;
     user-select: none;
 }
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+
 body {
     height: 100vh;
     overflow-y: auto;
@@ -20,8 +30,8 @@ body {
         Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.descr {
-    max-height: 450px;
+.mainBox {
+    height: 450px;
     min-width: 300px;
 }
 
