@@ -4,19 +4,24 @@ import {Todos} from '../../interface';
 import ModalForm from './ModalForm';
 import TodoHeader from './TodoHeader';
 import Todo from './Todo';
+import Spinner from '../Pr2_cmp/Spinner';
 
 type AddTodo = (text: string) => void;
 
 const TodoList: FC = () => {
     const [showModal, setShowModal] = React.useState(false);
     const [todos, setTodos] = React.useState<Todos[]>([]);
+    const [loading, setLoading] = React.useState(false);
 
     React.useEffect(() => {
+        setLoading(true);
         fetchTodos();
+        setLoading(false);
     }, []);
 
     // Fetch todos from API
     const fetchTodos = async () => {
+        setLoading(true);
         try {
             const response = await fetch(
                 'https://ts-bk-todo.herokuapp.com/api/v1/todo',
@@ -26,9 +31,11 @@ const TodoList: FC = () => {
         } catch (error) {
             console.log('error', error);
         }
+        setLoading(false);
     };
     // Add todo to API
     const addTodo: AddTodo = async (todo) => {
+        setLoading(true);
         const res = await fetch(
             'https://ts-bk-todo.herokuapp.com/api/v1/todo',
             {
@@ -44,9 +51,11 @@ const TodoList: FC = () => {
         console.log(data.todo);
 
         setTodos([...todos, data.todo]);
+        setLoading(true);
     };
     // Delete todo from API
     const deleteTodo = async (_id: string) => {
+        setLoading(true);
         console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
             await fetch(`https://ts-bk-todo.herokuapp.com/api/v1/todo/${_id}`, {
@@ -54,6 +63,7 @@ const TodoList: FC = () => {
             });
             setTodos(todos.filter((todo) => todo._id !== _id));
         }
+        setLoading(false);
     };
 
     const inputRef = React.useRef<HTMLInputElement>(null);
@@ -65,7 +75,9 @@ const TodoList: FC = () => {
     //Auto scroll to bottom
     React.useEffect(scrollToBottom, [todos]);
 
-    return (
+    return loading ? (
+        <Spinner />
+    ) : (
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
                 <div className="max-w-sm  relative ">
