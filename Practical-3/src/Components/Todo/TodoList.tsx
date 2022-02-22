@@ -21,7 +21,6 @@ const TodoList: FC = () => {
 
     // Fetch todos from API
     const fetchTodos = async () => {
-        setLoading(true);
         try {
             const response = await fetch(
                 'https://ts-bk-todo.herokuapp.com/api/v1/todo',
@@ -31,11 +30,9 @@ const TodoList: FC = () => {
         } catch (error) {
             console.log('error', error);
         }
-        setLoading(false);
     };
     // Add todo to API
     const addTodo: AddTodo = async (todo) => {
-        setLoading(true);
         const res = await fetch(
             'https://ts-bk-todo.herokuapp.com/api/v1/todo',
             {
@@ -51,11 +48,9 @@ const TodoList: FC = () => {
         console.log(data.todo);
 
         setTodos([...todos, data.todo]);
-        setLoading(true);
     };
     // Delete todo from API
     const deleteTodo = async (_id: string) => {
-        setLoading(true);
         console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
             await fetch(`https://ts-bk-todo.herokuapp.com/api/v1/todo/${_id}`, {
@@ -63,7 +58,6 @@ const TodoList: FC = () => {
             });
             setTodos(todos.filter((todo) => todo._id !== _id));
         }
-        setLoading(false);
     };
 
     const inputRef = React.useRef<HTMLInputElement>(null);
@@ -104,7 +98,7 @@ const TodoList: FC = () => {
                         ) : null}
                     </div>
                     <button
-                        className="absolute -bottom-4 font-extralight ml-5 rounded-full translate-x-24 justify-center items-center py-5 px-5  btn_Add"
+                        className="absolute -bottom-4 font-extralight ml-9  rounded-full translate-x-24 justify-center items-center py-5 px-5  btn_Add"
                         onClick={() => setShowModal(true)}>
                         <FaPlus />
                     </button>

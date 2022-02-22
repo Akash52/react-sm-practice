@@ -6,7 +6,7 @@ import {day, month, year, date} from './Date';
 const TodoHeader: FC = () => {
     return (
         <>
-            <div className="mb-4 bg-slate-50  rounded-md flex justify-between items-center  py-3 px-5 sticky top-0">
+            <div className="mb-4 bg-white pt-8 rounded-md flex justify-between items-center  px-5 sticky top-0">
                 <div className="flex justify-center items-center">
                     <h2 className="text-gray-800 mr-2 -tracking-widest text-5xl font-medium mb-4">
                         {date}
