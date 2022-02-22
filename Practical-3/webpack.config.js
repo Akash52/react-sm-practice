@@ -12,15 +12,9 @@ module.exports = {
         publicPath: '/',
     },
     devServer: {
-        // proxy: {
-        //     '/': {
-        //         target: 'http://localhost:5000',
-        //         secure: false,
-        //     },
-        // },
         historyApiFallback: true,
-        port: 3000,
         open: true,
+        port: 3000,
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
