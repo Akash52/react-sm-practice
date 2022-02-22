@@ -17,7 +17,9 @@ const TodoList: FC = () => {
 
     const fetchTodos = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/v1/todo');
+            const response = await fetch(
+                'https://ts-bk-todo.herokuapp.com/api/v1/todo',
+            );
             const data = await response.json();
             setTodos(data.todos);
         } catch (error) {
@@ -26,13 +28,16 @@ const TodoList: FC = () => {
     };
 
     const addTodo: AddTodo = async (todo) => {
-        const res = await fetch('http://localhost:5000/api/v1/todo', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
+        const res = await fetch(
+            'https://ts-bk-todo.herokuapp.com/api/v1/todo',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({todo}),
             },
-            body: JSON.stringify({todo}),
-        });
+        );
 
         const data = await res.json();
         console.log(data.todo);
@@ -43,7 +48,7 @@ const TodoList: FC = () => {
     const deleteTodo = async (_id: string) => {
         console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
-            await fetch(`http://localhost:5000/api/v1/todo/${_id}`, {
+            await fetch(`https://ts-bk-todo.herokuapp.com/api/v1/todo/${_id}`, {
                 method: 'DELETE',
             });
             setTodos(todos.filter((todo) => todo._id !== _id));
