@@ -7,6 +7,7 @@ const Todo: React.FC<{
     setTodos: React.Dispatch<React.SetStateAction<Array<Todos>>>;
     deleteTodo: (id: string) => void;
 }> = ({todo, todos, setTodos, deleteTodo}) => {
+    //Basic toggle for completed or not
     const onToggle = (id: string) => {
         setTodos(
             todos.map((task) =>

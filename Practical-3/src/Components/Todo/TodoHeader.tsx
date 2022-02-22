@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import {day, month, year, date} from './Date';
 
+//These component reprsent the header of the todo list
+
 const TodoHeader: FC = () => {
     return (
         <>

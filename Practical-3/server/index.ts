@@ -16,10 +16,6 @@ app.use('/api/v1/todo', todoRoutes);
 //Connect to database
 connectDB();
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
-
 //Here We Create Simple Express Server
 
 const PORT: string | number = process.env.PORT || 5000;

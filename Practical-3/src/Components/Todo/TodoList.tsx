@@ -15,6 +15,7 @@ const TodoList: FC = () => {
         fetchTodos();
     }, []);
 
+    // Fetch todos from API
     const fetchTodos = async () => {
         try {
             const response = await fetch(
@@ -26,7 +27,7 @@ const TodoList: FC = () => {
             console.log('error', error);
         }
     };
-
+    // Add todo to API
     const addTodo: AddTodo = async (todo) => {
         const res = await fetch(
             'https://ts-bk-todo.herokuapp.com/api/v1/todo',
@@ -44,7 +45,7 @@ const TodoList: FC = () => {
 
         setTodos([...todos, data.todo]);
     };
-
+    // Delete todo from API
     const deleteTodo = async (_id: string) => {
         console.log(_id);
         if (window.confirm('Are you sure you want to delete this Todo?')) {
@@ -61,6 +62,7 @@ const TodoList: FC = () => {
             inputRef.current.scrollIntoView({behavior: 'smooth'});
         }
     };
+    //Auto scroll to bottom
     React.useEffect(scrollToBottom, [todos]);
 
     return (
