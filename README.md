@@ -7,6 +7,10 @@
 ### `Practical 2`
 [Live Demo](https://react-pr2-akash.netlify.app/)
 
+
+### `Practical 3`
+[Live Demo](https://react-ts-pr3.netlify.app/) 
+
 ### `Practical 4`
 [Live Demo](https://react-sm-p4.netlify.app/) 
 
