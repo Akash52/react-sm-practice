@@ -21,12 +21,13 @@ const ModalForm: FC<props> = ({setShowModal, handleAdd}) => {
         setText(e.currentTarget.value);
         textLengthRef.current = e.currentTarget.value.length;
     };
+
     //handleSubmit is called when the submit button is clicked
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (textLengthRef.current > MAX_LENGTH) {
             alert('Todo is too long');
-        } else {
+        } else if (text.length > 0) {
             handleAdd(text);
             setText('');
             setShowModal(false);

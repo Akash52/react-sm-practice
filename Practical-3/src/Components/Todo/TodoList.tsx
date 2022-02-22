@@ -74,7 +74,7 @@ const TodoList: FC = () => {
     ) : (
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
-                <div className="max-w-sm  relative ">
+                <div className="relative ">
                     <div className="w-full mainBox bg-white rounded-lg shadow-lg mb-3 pb-4  px-4 overflow-y-auto">
                         <TodoHeader />
                         {todos?.map((todo) => (
