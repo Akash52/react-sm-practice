@@ -27,7 +27,7 @@ const ModalForm: FC<props> = ({setShowModal, handleAdd}) => {
         e.preventDefault();
         if (textLengthRef.current > MAX_LENGTH) {
             alert('Todo is too long');
-        } else if (text.length > 0) {
+        } else if (text.trim().length > 0) {
             handleAdd(text);
             setText('');
             setShowModal(false);
