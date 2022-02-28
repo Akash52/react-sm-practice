@@ -14,13 +14,12 @@ const TodoList: FC = () => {
     const [loading, setLoading] = React.useState(false);
 
     React.useEffect(() => {
-        setLoading(true);
         fetchTodos();
-        setLoading(false);
     }, []);
 
     // Fetch todos from API
     const fetchTodos = async () => {
+        setLoading(true);
         try {
             const response = await fetch(
                 'https://ts-bk-todo.herokuapp.com/api/v1/todo',
@@ -30,6 +29,7 @@ const TodoList: FC = () => {
         } catch (error) {
             console.log('error', error);
         }
+        setLoading(false);
     };
     // Add todo to API
     const addTodo: AddTodo = async (todo) => {
@@ -69,9 +69,11 @@ const TodoList: FC = () => {
     //Auto scroll to bottom
     React.useEffect(scrollToBottom, [todos]);
 
-    return loading ? (
-        <Spinner />
-    ) : (
+    if (loading) {
+        return <Spinner />;
+    }
+
+    return (
         <>
             <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
                 <div className="relative ">

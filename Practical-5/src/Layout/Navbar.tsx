@@ -39,7 +39,7 @@ const Navbar: FC = () => {
                                 text-white
                                 uppercase
                                 hover:opacity-75"
-                                onClick={() => navigate('/')}>
+                                onClick={() => navigate('/todos')}>
                                 <i className="text-lg text-white opacity-75 fa-solid fa-list-check"></i>
                                 <span className="ml-2">Todo</span>
                             </li>
