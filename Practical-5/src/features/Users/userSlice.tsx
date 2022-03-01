@@ -1,27 +1,14 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import userService from './userService';
+import {IUsers} from './types';
 
-interface User {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-    avatar: string;
-    interpretedBy: string;
-}
-interface IUser {
-    users: User[];
-    isLoading: boolean;
-    isError: boolean;
-    isSuccess: boolean;
-}
-
+//Our initial state
 const initialState = {
     users: [],
     isLoading: false,
     isError: false,
     isSuccess: false,
-} as IUser;
+} as IUsers;
 
 //get users
 
@@ -29,6 +16,8 @@ export const getUsers = createAsyncThunk('user/getUsers', async () => {
     const users = await userService.getUsers();
     return await users;
 });
+
+//create our slice
 
 export const userSlice = createSlice({
     name: 'users',
@@ -41,6 +30,7 @@ export const userSlice = createSlice({
             state.isSuccess = false;
         },
     },
+    //extra reducers is a way to add extra reducers to our slice
     extraReducers: (builder) => {
         builder
             .addCase(getUsers.pending, (state) => {
@@ -62,5 +52,6 @@ export const userSlice = createSlice({
     },
 });
 
+//export our reducer
 export const {reset} = userSlice.actions;
 export default userSlice.reducer;
