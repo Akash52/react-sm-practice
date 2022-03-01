@@ -1,14 +1,9 @@
 import React from 'react';
 import {FC} from 'react';
+import UsersList from '../Components/Users/UsersList';
 
 const Home: FC = () => {
-    return (
-        <>
-            <div>
-                <h1>Practical 5</h1>
-            </div>
-        </>
-    );
+    return <UsersList />;
 };
 
 export default Home;
