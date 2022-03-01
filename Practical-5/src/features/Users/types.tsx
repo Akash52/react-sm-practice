@@ -4,7 +4,8 @@ export interface IUser {
     last_name: string;
     email: string;
     avatar: string;
-    interpretedBy: string;
+    status: string;
+    access: string;
 }
 
 export interface IUsers {
