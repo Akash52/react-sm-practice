@@ -53,7 +53,7 @@ const UserCard: FC<{user: IUser | null}> = ({user}) => {
                                     <p className="text-2xl font-semibold tracking-wider leading-3 mb-3 text-gray-800 text-left ">
                                         {user.reviewed}
                                     </p>
-                                    <p className="text-xs font-normal leading-3 text-gray-600">
+                                    <p className="text-xs font-normal whitespace-nowrap leading-3 text-gray-600">
                                         Clicks reviewed
                                     </p>
                                 </div>
@@ -61,7 +61,7 @@ const UserCard: FC<{user: IUser | null}> = ({user}) => {
                                     <p className="text-2xl font-semibold tracking-wider leading-3 mb-3 text-gray-800 text-left ">
                                         {user.monthly_click}
                                     </p>
-                                    <p className="text-xs font-normal leading-3 text-gray-600 text-left ">
+                                    <p className="text-xs font-normal whitespace-nowrap leading-3 text-gray-600 text-left ">
                                         Monthly clicks
                                     </p>
                                 </div>
