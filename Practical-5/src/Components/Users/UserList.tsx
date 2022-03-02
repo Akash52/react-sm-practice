@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {FC} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {getUsers, reset} from '../../features/Users/userSlice';
@@ -11,6 +11,7 @@ import UserCard from './UserCard';
 const UsersList: FC = () => {
     const dispatch = useDispatch();
     const [user, setUser] = React.useState(null);
+
     //get users from the store
     const {users, isLoading, isSuccess} = useSelector(
         (state: RootState) => state.users,
@@ -30,11 +31,14 @@ const UsersList: FC = () => {
         };
     }, [dispatch, isSuccess]);
 
-    // handling hovered user
+    //memorize the handleHover function
 
-    const handleHover = (user) => {
-        setUser(user);
-    };
+    const handleHover = useCallback(
+        (user) => {
+            setUser(user);
+        },
+        [setUser],
+    );
 
     //If we are loading, show the spinner
     if (isLoading) {

@@ -5,19 +5,27 @@ const UserItem: FC<{
     person: IUser;
     handleHover: (user: IUser | null) => void;
 }> = ({person, handleHover}) => {
+    const [hovered, setHovered] = React.useState(false);
+
+    const handleMouseEnter = React.useCallback(() => {
+        setHovered(true);
+        handleHover(person);
+    }, [person, handleHover]);
+
+    const handleMouseLeave = React.useCallback(() => {
+        setHovered(false);
+        handleHover(null);
+    }, [handleHover]);
+
     return (
         <>
             {/* Table Row */}
             <tr key={person.email}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                    <div
-                        className="flex items-center  cursor-pointer"
-                        onMouseEnter={() => {
-                            handleHover(person);
-                        }}
-                        onMouseLeave={() => {
-                            handleHover(null);
-                        }}>
+                <td
+                    className="px-6 py-4 whitespace-nowrap"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}>
+                    <div className="flex items-center  cursor-pointer">
                         <div className="flex-shrink-0 h-10 w-10">
                             <img
                                 className="h-10 w-10 rounded-full"

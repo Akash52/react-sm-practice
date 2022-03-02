@@ -3,7 +3,7 @@ import {IUser} from '../../features/Users/types';
 
 const UserCard: FC<{user: IUser | null}> = ({user}) => {
     return (
-        <>
+        <div className={`profile-card ${user !== null ? 'show' : 'hide'}`}>
             {user !== null && (
                 <>
                     <div className="flex items-center justify-center w-full h-full py-8 px-4">
@@ -70,7 +70,7 @@ const UserCard: FC<{user: IUser | null}> = ({user}) => {
                     </div>
                 </>
             )}
-        </>
+        </div>
     );
 };
 
