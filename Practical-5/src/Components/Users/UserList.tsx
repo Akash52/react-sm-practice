@@ -77,7 +77,8 @@ const UsersList: FC = () => {
                     </div>
                     <div className="md:w-1/4 w-full mx-auto">
                         <div className="sticky top-10  xl:translate-y-20 md:-translate-x-14 md:-translate-y-2 mx-auto">
-                            <UserCard user={user} />
+                            {/* If we have a user, show the user card */}
+                            {user && <UserCard user={user} />}
                         </div>
                     </div>
                 </div>
