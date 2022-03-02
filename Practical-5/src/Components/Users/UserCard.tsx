@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {IUser} from '../../features/Users/types';
 
-const UserCard: FC<{user: IUser}> = ({user}) => {
+const UserCard: FC<{user: IUser | null}> = ({user}) => {
     return (
         <>
             {user !== null && (
