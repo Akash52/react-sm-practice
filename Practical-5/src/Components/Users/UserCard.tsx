@@ -25,7 +25,7 @@ const UserCard: FC<{user: IUser}> = ({user}) => {
                                 {user.email}
                             </p>
                             <p className="text-sm font-semibold  leading-5 mb-2  text-gray-800  text-center ">
-                                Your Plan: Stadard
+                                Your Plan: {user.plan}
                             </p>
 
                             <div className="flex items-center justify-center">
@@ -51,7 +51,7 @@ const UserCard: FC<{user: IUser}> = ({user}) => {
                             <div className="mt-7 flex justify-between">
                                 <div className="border-r-2 px-4">
                                     <p className="text-2xl font-semibold tracking-wider leading-3 mb-3 text-gray-800 text-left ">
-                                        2,450
+                                        {user.reviewed}
                                     </p>
                                     <p className="text-xs font-normal leading-3 text-gray-600">
                                         Clicks reviewed
@@ -59,7 +59,7 @@ const UserCard: FC<{user: IUser}> = ({user}) => {
                                 </div>
                                 <div className="px-4">
                                     <p className="text-2xl font-semibold tracking-wider leading-3 mb-3 text-gray-800 text-left ">
-                                        50000
+                                        {user.monthly_click}
                                     </p>
                                     <p className="text-xs font-normal leading-3 text-gray-600 text-left ">
                                         Monthly clicks

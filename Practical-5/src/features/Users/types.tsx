@@ -6,6 +6,9 @@ export interface IUser {
     avatar: string;
     status: string;
     access: string;
+    reviewed: number;
+    monthly_click: number;
+    plan: string;
 }
 
 export interface IUsers {
