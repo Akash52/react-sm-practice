@@ -14,4 +14,8 @@
 ### `Practical 4`
 [Live Demo](https://react-sm-p4.netlify.app/) 
 
+### `Practical 5`
+[Live Demo](https://react-pr-5-akash.netlify.app/)
+
+
 
