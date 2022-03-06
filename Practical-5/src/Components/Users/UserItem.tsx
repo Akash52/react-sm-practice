@@ -5,15 +5,11 @@ const UserItem: FC<{
     person: IUser;
     handleHover: (user: IUser | null) => void;
 }> = ({person, handleHover}) => {
-    const [hovered, setHovered] = React.useState(false);
-
     const handleMouseEnter = React.useCallback(() => {
-        setHovered(true);
         handleHover(person);
     }, [person, handleHover]);
 
     const handleMouseLeave = React.useCallback(() => {
-        setHovered(false);
         handleHover(null);
     }, [handleHover]);
 
