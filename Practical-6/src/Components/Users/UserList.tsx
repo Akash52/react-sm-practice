@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {FC} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {getUsers, reset} from '../../features/Users/userSlice';
-import {RootState} from '../../app/store';
+import {RootState} from '../../Redux/app/store';
 import Spinner from '../Pr2_cmp/Spinner';
 import TableHeader from './Table/TableHeader';
 import UserItem from './UserItem';
