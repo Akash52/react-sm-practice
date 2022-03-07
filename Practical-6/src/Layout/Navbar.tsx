@@ -9,10 +9,12 @@ const Navbar: FC = () => {
                 <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
                     <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
                         <Link
-                            className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase whitespace-nowrap"
+                            className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase whitespace-nowrap hover:animate-ping hover:text-orange-500"
                             to="/">
-                            <i className="m-2 text-lg text-white opacity-75 fa-solid fa-laptop leading-lg animate-pulse"></i>
-                            Simfrom ReactJS 😃
+                            <i className="m-2 text-lg text-white opacity-75 fa-solid fa-laptop leading-lg hover:to-blue-600">
+                                {' '}
+                            </i>
+                            Simform ReactJS 😃
                         </Link>
                     </div>
                     <div
