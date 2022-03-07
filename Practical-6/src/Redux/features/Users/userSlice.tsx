@@ -29,6 +29,13 @@ export const userSlice = createSlice({
             state.isError = false;
             state.isSuccess = false;
         },
+        removeUser(state, action) {
+            const id: number = action.payload;
+            return {
+                ...state,
+                users: state.users.filter((user) => user.id !== id),
+            };
+        },
     },
     //extra reducers is a way to add extra reducers to our slice
     extraReducers: (builder) => {
@@ -53,5 +60,5 @@ export const userSlice = createSlice({
 });
 
 //export our reducer
-export const {reset} = userSlice.actions;
+export const {reset, removeUser} = userSlice.actions;
 export default userSlice.reducer;
