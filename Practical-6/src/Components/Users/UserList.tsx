@@ -1,16 +1,20 @@
 import React, {useCallback} from 'react';
 import {FC} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getUsers, reset} from '../../features/Users/userSlice';
+import {getUsers, reset} from '../../Redux/features/Users/userSlice';
 import {RootState} from '../../Redux/app/store';
 import Spinner from '../Pr2_cmp/Spinner';
 import TableHeader from './Table/TableHeader';
 import UserItem from './UserItem';
 import UserCard from './UserCard';
+import usePagination from '../../hook/usePagination';
+import Pagination from './Pagination';
+import SearchBar from './SearchBar';
 
 const UsersList: FC = () => {
     const dispatch = useDispatch();
     const [user, setUser] = React.useState(null);
+    const [searchTitle, setSearchTitle] = React.useState('');
 
     //get users from the store
     const {users, isLoading, isSuccess} = useSelector(
@@ -21,6 +25,21 @@ const UsersList: FC = () => {
     React.useEffect(() => {
         dispatch(getUsers());
     }, [dispatch]);
+
+    //usePageination hook to paginate the users
+
+    const {
+        firstContentIndex,
+        lastContentIndex,
+        nextPage,
+        prevPage,
+        page,
+        setPage,
+        totalPages,
+    } = usePagination({
+        contentPerPage: 6,
+        count: users.length,
+    });
 
     //Use the dispatch function to dispatch our reset action
     React.useEffect(() => {
@@ -45,6 +64,14 @@ const UsersList: FC = () => {
         return <Spinner />;
     }
 
+    //filter the users based on the searchTitle
+
+    const filteredUsers = users.filter((user) => {
+        return user.first_name
+            .toLowerCase()
+            .includes(searchTitle.toLowerCase());
+    });
+
     return (
         <>
             <div className="container mx-auto">
@@ -54,23 +81,39 @@ const UsersList: FC = () => {
                             <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                     <div className="overflow-hidden  sm:rounded-lg">
+                                        {/* Search Component */}
+                                        <SearchBar
+                                            setSearchTitle={setSearchTitle}
+                                        />
                                         <table className="min-w-full ">
                                             {/* Table Header */}
                                             <TableHeader />
                                             <tbody className="bg-white">
                                                 {/* Maping users to table rows */}
-                                                {users.map((person) => (
-                                                    <UserItem
-                                                        key={person.id}
-                                                        person={person}
-                                                        handleHover={
-                                                            handleHover
-                                                        }
-                                                    />
-                                                ))}
+                                                {filteredUsers
+                                                    .slice(
+                                                        firstContentIndex,
+                                                        lastContentIndex,
+                                                    )
+                                                    .map((person) => (
+                                                        <UserItem
+                                                            key={person.id}
+                                                            person={person}
+                                                            handleHover={
+                                                                handleHover
+                                                            }
+                                                        />
+                                                    ))}
                                             </tbody>
                                         </table>
                                     </div>
+                                    <Pagination
+                                        nextPage={nextPage}
+                                        prevPage={prevPage}
+                                        page={page}
+                                        setPage={setPage}
+                                        totalPages={totalPages}
+                                    />
                                 </div>
                             </div>
                         </div>
