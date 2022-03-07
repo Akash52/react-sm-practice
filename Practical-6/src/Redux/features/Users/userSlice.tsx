@@ -1,4 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import userService from './userService';
 import {IUsers} from './types';
 
@@ -10,11 +11,30 @@ const initialState = {
     isSuccess: false,
 } as IUsers;
 
+interface ListResponse<T> {
+    page: number;
+    per_page: number;
+    total: number;
+    total_pages: number;
+    data: T[];
+}
+
 //get users
 
 export const getUsers = createAsyncThunk('user/getUsers', async () => {
     const users = await userService.getUsers();
     return await users;
+});
+
+//we done our pagination using custom hooks but we can also create pagination using redux-toolkit-query
+
+export const api = createApi({
+    baseQuery: fetchBaseQuery({baseUrl: 'https://reqres.in/api/'}),
+    endpoints: (build) => ({
+        listPosts: build.query<ListResponse<IUsers>, number | void>({
+            query: (page = 1) => `users?page=${page}`,
+        }),
+    }),
 });
 
 //create our slice
@@ -61,4 +81,5 @@ export const userSlice = createSlice({
 
 //export our reducer
 export const {reset, removeUser} = userSlice.actions;
+export const {useListPostsQuery} = api;
 export default userSlice.reducer;
