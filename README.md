@@ -17,5 +17,9 @@
 ### `Practical 5`
 [Live Demo](https://react-pr-5-akash.netlify.app/)
 
+### `Practical 6`
+[Live Demo](https://react-sm-pr6.netlify.app/)
+
+
 
 
