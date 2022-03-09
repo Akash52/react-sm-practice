@@ -1,9 +1,9 @@
 import React from 'react';
 import {FC} from 'react';
-import UsersList from '../Components/Users/UserList';
+import Deploy from '../Components/Deploy/Deploy';
 
 const Home: FC = () => {
-    return <UsersList />;
+    return <Deploy />;
 };
 
 export default Home;
