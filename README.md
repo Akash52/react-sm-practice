@@ -20,6 +20,11 @@
 ### `Practical 6`
 [Live Demo](https://react-sm-pr6.netlify.app/)
 
+### `Practical 7`
+[Live Demo](https://react-sm-pr7.netlify.app/)
+
+
+
 
 
 
