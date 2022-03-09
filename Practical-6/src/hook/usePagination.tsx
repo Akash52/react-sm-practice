@@ -40,9 +40,11 @@ const usePagination = ({contentPerPage, count}: Props) => {
         // if number is greater than number of pages, set to last page
         if (num > pageCount) {
             setPage(pageCount);
+
             // if number is less than 1, set page to first page
         } else if (num < 1) {
             setPage(1);
+            console.log('setPageSAFE: 1', 1);
         } else {
             setPage(num);
         }

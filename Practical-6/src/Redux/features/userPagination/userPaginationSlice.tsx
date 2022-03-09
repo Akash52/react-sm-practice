@@ -1,6 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {setupListeners} from '@reduxjs/toolkit/dist/query';
-import {userApi} from '../features/userPagination/userAPI';
+import {userApi} from './userAPI';
 
 export const store = configureStore({
     reducer: {
@@ -9,5 +8,3 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(userApi.middleware),
 });
-
-setupListeners(store.dispatch);
