@@ -3,20 +3,17 @@ import React, {FC} from 'react';
 const deploy = [
     {
         title: 'Microsoft Azure',
-        link: 'https://react-demo-azurv1.azurewebsites.net/',
+        link: 'https://react-build-zu.azurewebsites.net/',
     },
     {
         title: 'Firebase',
-        link: 'https://react-firebase-host.web.app/',
+        link: 'https://fir-react-build-64b03.web.app/',
     },
     {
         title: 'Netlify',
         link: 'https://react-app-deploy.netlify.app/',
     },
-    {
-        title: 'Heroku',
-        link: 'https://react-heroku-deploy-one.herokuapp.com/',
-    },
+
     {
         title: 'Vercel',
         link: 'https://react-app-deploy-five.vercel.app/',
@@ -29,7 +26,7 @@ const Deploy: FC = () => {
             <div className="container flex flex-col align-middle mx-auto justify-center">
                 <div className="  bg-slate-900 p-12 m-12 cursor-pointer duration-500  rounded-lg shadow-2xl justify-center hover:bg-gray-900">
                     <h1 className=" font-semibold text-4xl text-white mb-5 text-center">
-                        Deploy
+                        Env : {process.env.NODE_ENV}
                     </h1>
                     {deploy.map((item, index) => (
                         <div key={index}>
