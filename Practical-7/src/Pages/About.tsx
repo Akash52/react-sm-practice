@@ -45,7 +45,7 @@ const About: FC = () => {
             <div className="  bg-slate-800 p-12 m-12 cursor-pointer duration-500  rounded-lg shadow-2xl justify-center hover:bg-gray-900">
                 <h1 className=" font-semibold text-2xl lg:text-4xl md:text-3xl text-white mb-5 text-center">
                     Practical List{' '}
-                    <span className="lg:text-4xl animate-pulse">😁</span>
+                    <span className="lg:text-4xl animate-pulse">😄</span>
                 </h1>
                 {aboutData.slice(0, 7).map((item, index) => (
                     <div key={index}>

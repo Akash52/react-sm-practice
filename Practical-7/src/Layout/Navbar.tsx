@@ -54,6 +54,23 @@ const Navbar: FC = () => {
                                 text-white
                                 uppercase
                                 hover:opacity-75"
+                                onClick={() => navigate('/deploy')}>
+                                <i className="text-lg text-white opacity-75  fa fa-globe"></i>
+                                <span className="ml-2">Deploy</span>
+                            </li>
+                            <li
+                                className="nav-item
+                                cursor-pointer
+                                flex
+                                items-center
+                                px-3
+                                py-2
+                                text-xs
+                                font-bold
+                                leading-snug
+                                text-white
+                                uppercase
+                                hover:opacity-75"
                                 onClick={() => navigate('/users')}>
                                 <i className="text-lg text-white opacity-75  fa fa-user"></i>
                                 <span className="ml-2">Users</span>
