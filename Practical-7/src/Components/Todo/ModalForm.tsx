@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import {date} from './Date';
-import EscapeOutside from 'react-escape-outside';
 
 interface props {
     setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -50,64 +49,70 @@ const ModalForm: FC<props> = ({setShowModal, handleAdd}) => {
         }
     }, [inputRef]);
 
+    //esc key
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Escape') {
+            setShowModal(false);
+            removeLocalStorage();
+        }
+    };
+
     return (
         <>
-            <EscapeOutside onEscapeOutside={() => setShowModal(false)}>
-                <form autoComplete="off" onSubmit={handleSubmit}>
-                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                            {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                {/*body*/}
-                                <div className="relative p-6 flex-auto">
-                                    <div>
-                                        <label
-                                            htmlFor="todo"
-                                            className="block mb-2 text-lg font-medium text-gray-900 ">
-                                            Add new task
-                                        </label>
-                                        <input
-                                            type="text"
-                                            ref={inputRef}
-                                            value={text}
-                                            name="todo"
-                                            id="todo"
-                                            placeholder="eg. Buy new sweatshirt"
-                                            className="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
-                                            required
-                                            onChange={handleTextChange}
-                                        />
-                                        <p
-                                            className={`${
-                                                textLengthRef.current >
-                                                MAX_LENGTH
-                                                    ? 'text-red-600 text-right  mt-2 text-xs animate-pulse font-extrabold'
-                                                    : 'text-green-600 text-xs text-right mt-2 font-semibold tracking-wide'
-                                            } `}>
-                                            {textLengthRef.current}/{MAX_LENGTH}
-                                        </p>
-                                    </div>
+            <form autoComplete="off" onSubmit={handleSubmit}>
+                <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                    <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        {/*content*/}
+                        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            {/*body*/}
+                            <div className="relative p-6 flex-auto">
+                                <div>
+                                    <label
+                                        htmlFor="todo"
+                                        className="block mb-2 text-lg font-medium text-gray-900 ">
+                                        Add new task
+                                    </label>
+                                    <input
+                                        type="text"
+                                        ref={inputRef}
+                                        value={text}
+                                        name="todo"
+                                        id="todo"
+                                        placeholder="eg. Buy new sweatshirt"
+                                        className="bg-gray-50 border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
+                                        required
+                                        onKeyDown={handleKeyDown}
+                                        onChange={handleTextChange}
+                                    />
+                                    <p
+                                        className={`${
+                                            textLengthRef.current > MAX_LENGTH
+                                                ? 'text-red-600 text-right  mt-2 text-xs animate-pulse font-extrabold'
+                                                : 'text-green-600 text-xs text-right mt-2 font-semibold tracking-wide'
+                                        } `}>
+                                        {textLengthRef.current}/{MAX_LENGTH}
+                                    </p>
                                 </div>
-                                {/*footer*/}
-                                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                    <button
-                                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                        type="button"
-                                        onClick={() => setShowModal(false)}>
-                                        Close
-                                    </button>
-                                    <button
-                                        className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                        type="submit">
-                                        Add
-                                    </button>
-                                </div>
+                            </div>
+                            {/*footer*/}
+                            <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                <button
+                                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button"
+                                    onClick={() => setShowModal(false)}>
+                                    Close
+                                </button>
+                                <button
+                                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="submit">
+                                    Add
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                </form>
-            </EscapeOutside>
+                </div>
+                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+            </form>
         </>
     );
 };

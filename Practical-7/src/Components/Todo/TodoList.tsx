@@ -69,13 +69,15 @@ const TodoList: FC = () => {
     //Auto scroll to bottom
     React.useEffect(scrollToBottom, [todos]);
 
+    //escape key handler
+
     if (loading) {
         return <Spinner />;
     }
 
     return (
         <>
-            <div className="mx-auto todo  container py-12 px-6 flex justify-center items-center">
+            <div className="mx-auto todo   flex justify-center items-center">
                 <div className="relative ">
                     <div className="w-full mainBox bg-white rounded-lg shadow-lg mb-3 pb-4  px-4 overflow-y-auto">
                         <TodoHeader />
@@ -100,7 +102,7 @@ const TodoList: FC = () => {
                         ) : null}
                     </div>
                     <button
-                        className="absolute -bottom-4 font-extralight ml-9  rounded-full translate-x-24 justify-center items-center py-5 px-5  btn_Add"
+                        className="absolute bottom-0 font-extralight translate-y-4   rounded-full translate-x-32 justify-center items-center py-5 px-5  btn_Add"
                         onClick={() => setShowModal(true)}>
                         <FaPlus />
                     </button>

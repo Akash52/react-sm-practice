@@ -31,27 +31,33 @@ const about = [
         link: 'https://react-sm-pr6.netlify.app/',
         des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
     },
+    {
+        title: 'Practical 7',
+        link: 'https://react-sm-pr7.netlify.app/',
+        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
+    },
 ];
 
 const About: FC = () => {
-    const [aboutData, setAboutData] = React.useState(about);
+    const [aboutData] = React.useState(about);
     return (
         <div className="container flex flex-col align-middle mx-auto justify-center">
             <div className="  bg-slate-800 p-12 m-12 cursor-pointer duration-500  rounded-lg shadow-2xl justify-center hover:bg-gray-900">
-                <h1 className=" font-semibold text-4xl text-white mb-5 text-center">
-                    About
+                <h1 className=" font-semibold text-2xl lg:text-4xl md:text-3xl text-white mb-5 text-center">
+                    Practical List{' '}
+                    <span className="lg:text-4xl animate-pulse">😁</span>
                 </h1>
-                {aboutData.slice(0, 6).map((item, index) => (
+                {aboutData.slice(0, 7).map((item, index) => (
                     <div key={index}>
                         <div className=" flex justify-between border-b-2">
-                            <h1 className="font-black text-3xl  sm:text-center text-gray-100 mb-4  lg:text-left">
+                            <h1 className="font-black sm:text-sm mt-2  md:text-2xl lg:text-3xl  sm:text-center text-gray-100 mb-4  lg:text-left">
                                 {item.title}
                             </h1>
                             <a
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="font-normal text-xl mt-2 text-gray-200 hover:text-orange-400">
+                                className="font-normal lg:text-xl mt-2 text-gray-200 hover:text-orange-400">
                                 Live Demo
                             </a>
                         </div>

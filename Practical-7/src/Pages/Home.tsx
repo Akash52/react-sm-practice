@@ -1,9 +1,8 @@
 import React from 'react';
 import {FC} from 'react';
-import Deploy from '../Components/Deploy/Deploy';
 
 const Home: FC = () => {
-    return <Deploy />;
+    return <h1>Hello World!</h1>;
 };
 
 export default Home;

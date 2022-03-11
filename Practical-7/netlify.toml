@@ -4,5 +4,5 @@
   status = 200
 
   [build]
-  base = "/"
+  base = "/Practical-7"
   publish = "build/"

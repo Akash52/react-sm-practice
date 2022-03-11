@@ -1,16 +1,17 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {FC} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getUsers, reset} from '../../features/Users/userSlice';
-import {RootState} from '../../app/store';
+import {getUsers, reset} from '../../Redux/features/Users/userSlice';
+import {RootState} from '../../Redux/app/store';
 import Spinner from '../Pr2_cmp/Spinner';
 import TableHeader from './Table/TableHeader';
 import UserItem from './UserItem';
 import UserCard from './UserCard';
+import {IUser} from '../../Redux/features/Users/types';
 
 const UsersList: FC = () => {
     const dispatch = useDispatch();
-    const [user, setUser] = React.useState(null);
+    const [user, setUser] = React.useState<IUser | null>(null);
 
     //get users from the store
     const {users, isLoading, isSuccess} = useSelector(
@@ -31,14 +32,10 @@ const UsersList: FC = () => {
         };
     }, [dispatch, isSuccess]);
 
-    //memorize the handleHover function
-
-    const handleHover = useCallback(
-        (user) => {
-            setUser(user);
-        },
-        [setUser],
-    );
+    //handle the hover event
+    const handleHover = (user: IUser | null) => {
+        setUser(user);
+    };
 
     //If we are loading, show the spinner
     if (isLoading) {

@@ -1,17 +1,16 @@
 import React, {FC} from 'react';
-import {IUser} from '../../features/Users/types';
+import {IUser} from '../../Redux/features/Users/types';
 
 const UserItem: FC<{
     person: IUser;
     handleHover: (user: IUser | null) => void;
 }> = ({person, handleHover}) => {
-    const handleMouseEnter = React.useCallback(() => {
+    const handleMouseEnter = () => {
         handleHover(person);
-    }, [person, handleHover]);
-
-    const handleMouseLeave = React.useCallback(() => {
+    };
+    const handleMouseLeave = () => {
         handleHover(null);
-    }, [handleHover]);
+    };
 
     return (
         <>

@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {IUser} from '../../features/Users/types';
+import {IUser} from '../../Redux/features/Users/types';
 
 const UserCard: FC<{user: IUser | null}> = ({user}) => {
     return (
