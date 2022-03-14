@@ -3,7 +3,7 @@ import {FC} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {getUsers, reset} from '../../Redux/features/Users/userSlice';
 import {RootState} from '../../Redux/app/store';
-import Spinner from '../Pr2_cmp/Spinner';
+import Spinner from '../WebPackPR/Spinner';
 import TableHeader from './Table/TableHeader';
 import UserItem from './UserItem';
 import UserCard from './UserCard';

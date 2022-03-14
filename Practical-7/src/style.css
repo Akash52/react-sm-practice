@@ -15,7 +15,6 @@
 html {
     overflow: scroll;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
     width: 0; /* Remove scrollbar space */
@@ -27,6 +26,8 @@ body {
     overflow-y: auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu,
         Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #eeeeee;
+    scroll-behavior: smooth;
 }
 
 .mainBox {
@@ -92,7 +93,7 @@ body {
 h4:hover {
     opacity: 95;
 }
-span {
+/* span {
     color: #fff;
     display: inline-block;
     margin-right: 10px;
@@ -100,11 +101,11 @@ span {
     border-radius: 5px;
     background-color: #072227;
     transition: 0.5s ease;
-}
-span:hover {
+} */
+/* span:hover {
     cursor: pointer;
     background-color: #524a4e;
-}
+} */
 
 .todo {
     background-color: #eeedde;

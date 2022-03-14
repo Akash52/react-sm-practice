@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import ProfileList from '../Components/Pr2_cmp/ProfileList';
+import ProfileList from '../Components/WebPackPR/ProfileList';
 
 const Profile: FC = () => {
     return (

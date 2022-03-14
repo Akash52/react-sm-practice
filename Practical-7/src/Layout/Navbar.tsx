@@ -6,14 +6,14 @@ const Navbar: FC = () => {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
-            <nav className="relative flex flex-wrap items-center justify-between px-2  bg-slate-800 shadow-2xl">
+            <nav className="relative flex flex-wrap items-center justify-between px-2 bg-gradient-to-r from-gray-800 to-gray-900 mix-blend-multiply shadow-2xl ">
                 <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
                     <div className="relative flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
                         <Link
                             className="inline-block py-2 mr-4 text-sm font-bold leading-relaxed text-white uppercase whitespace-nowrap"
                             to="/">
                             <i className="m-2 text-lg text-white opacity-75 fa-solid fa-laptop leading-lg animate-pulse"></i>
-                            Simfrom ReactJS 😃
+                            Simform ReactJS 😃
                         </Link>
                         <button
                             className="block px-3 py-1 text-xl leading-none text-white bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer lg:hidden focus:outline-none"
