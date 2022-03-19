@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {IUser} from '../../Redux/features/Users/types';
-import {removeUser} from '../../Redux/features/Users/userSlice';
+import {IUser} from '../../Redux/Toolkit/features/Users/types';
+import {removeUser} from '../../Redux/Toolkit/features/Users/userSlice';
 import {useDispatch} from 'react-redux';
 
 const UserItem: FC<{

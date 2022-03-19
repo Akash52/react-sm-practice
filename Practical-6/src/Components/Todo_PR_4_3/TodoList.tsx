@@ -4,7 +4,7 @@ import {Todos} from '../../interface';
 import ModalForm from './ModalForm';
 import TodoHeader from './TodoHeader';
 import Todo from './Todo';
-import Spinner from '../Pr2_cmp/Spinner';
+import Spinner from '../Webpack_PR2/Spinner';
 
 type AddTodo = (text: string) => void;
 
