@@ -1,68 +1,16 @@
 import React, {FC} from 'react';
 
-const about = [
-    {
-        title: 'Practical 1',
-        link: 'https://react-practical-1.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-    {
-        title: 'Practical 2',
-        link: 'https://react-pr2-akash.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-    {
-        title: 'Practical 3',
-        link: 'https://react-ts-pr3.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-    {
-        title: 'Practical 4',
-        link: 'https://react-sm-p4.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-    {
-        title: 'Practical 5',
-        link: 'https://react-pr-5-akash.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-    {
-        title: 'Practical 6',
-        link: 'https://react-sm-pr6.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-    {
-        title: 'Practical 7',
-        link: 'https://react-sm-pr7.netlify.app/',
-        des: 'In thse App we explore React basics concepts : ComponentsJSX Props (proptypes, defaultprops, etc) State (Component & App Level) Styling Handling Events Lists & Keys Forms Context API HTTP Requests',
-    },
-];
-
 const About: FC = () => {
-    const [aboutData] = React.useState(about);
     return (
         <div className="container flex flex-col align-middle mx-auto justify-center">
-            <div className="  bg-slate-800 p-12 m-12 cursor-pointer duration-500  rounded-lg shadow-2xl justify-center hover:bg-gray-900">
-                <h1 className=" font-semibold text-2xl lg:text-4xl md:text-3xl text-white mb-5 text-center">
-                    Practical List{' '}
+            <div className="  bg-gradient-to-r from-slate-700 to-slate-800  p-12 m-12 cursor-pointer duration-500  rounded-lg shadow-2xl justify-center hover:bg-gray-900">
+                <p className=" font-semibold text-sm  md:text-xl text-white mb-5 text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptate quia beatae ducimus obcaecati aut. Impedit
+                    accusamus, sit doloremque numquam, omnis amet, odio libero
+                    similique adipisci nihil ad quos excepturi mollitia.
                     <span className="lg:text-4xl animate-pulse">😄</span>
-                </h1>
-                {aboutData.slice(0, 7).map((item, index) => (
-                    <div key={index}>
-                        <div className=" flex justify-between border-b-2">
-                            <h1 className="font-black sm:text-sm mt-2  md:text-2xl lg:text-3xl  sm:text-center text-gray-100 mb-4  lg:text-left">
-                                {item.title}
-                            </h1>
-                            <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="font-normal lg:text-xl mt-2 text-gray-200 hover:text-orange-400">
-                                Live Demo
-                            </a>
-                        </div>
-                    </div>
-                ))}
+                </p>
             </div>
         </div>
     );
