@@ -8,4 +8,12 @@ const getUsers = async () => {
     return data;
 };
 
-export default {getUsers};
+//user pagination
+
+const getUsersPagination = async (page: number) => {
+    const response = await fetch(`https://reqres.in/api/users?page=${page}`);
+    const data = await response.json();
+    return data.data;
+};
+
+export default {getUsers, getUsersPagination};

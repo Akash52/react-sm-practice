@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import UserPagination from './Components/Users/UserPagination';
 import Navbar from './Layout/Navbar';
 import {
     About,
@@ -25,6 +26,7 @@ const App: FC = () => {
                 <Route path="/todos" element={<TodoPage />} />
                 <Route path="/users" element={<Userpage />} />
                 <Route path="/deploy" element={<DeployPage />} />
+                <Route path="/userPagination" element={<UserPagination />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </Router>

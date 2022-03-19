@@ -6,3 +6,4 @@ export {default as IpInfo} from './IpPage';
 export {default as TodoPage} from './TodoPage';
 export {default as Userpage} from './Userpage';
 export {default as DeployPage} from './DeployPage';
+export {default as UserPaginationPage} from './UserPaginationPage';

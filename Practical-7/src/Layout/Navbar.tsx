@@ -8,7 +8,7 @@ const Navbar: FC = () => {
 
     return (
         <>
-            <nav className=" relative flex flex-wrap items-center justify-between px-2 bg-gradient-to-r from-slate-800 to-cyan-900 mix-blend-multiply shadow-2xl ">
+            <nav className="relative flex flex-wrap items-center justify-between px-2 bg-gradient-to-r from-slate-800 to-cyan-900 mix-blend-multiply shadow-2xl ">
                 <div className="container flex flex-wrap items-center justify-between px-4 mx-auto">
                     <div className="relative   flex justify-between w-full lg:w-auto lg:static lg:block lg:justify-start">
                         <Link
@@ -89,8 +89,26 @@ const Navbar: FC = () => {
                                 </li>
                                 <li
                                     className="nav-item
+                                cursor-pointer
                                 flex
                                 items-center
+                                px-3
+                                py-2
+                                text-xs
+                                font-bold
+                                leading-snug
+                                text-white
+                                uppercase
+                                hover:opacity-75"
+                                    onClick={() => navigate('/userPagination')}>
+                                    <i className="text-lg text-white opacity-75  fas fa-pager"></i>
+                                    <span className="ml-2">Pagination</span>
+                                </li>
+                                <li
+                                    className="nav-item
+                                flex
+                                items-center
+                                cursor-pointer
                                 px-3
                                 py-2
                                 text-xs
@@ -104,7 +122,7 @@ const Navbar: FC = () => {
                                     <span className="ml-2">Todo</span>
                                 </li>
                                 <li
-                                    className="nav-item flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                                    className="nav-item flex items-center px-3 cursor-pointer py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
                                     onClick={() => navigate('/ipinfo')}>
                                     <i className="text-lg text-white opacity-75 fas fa-server"></i>
                                     <span className="ml-2">IpInfo</span>

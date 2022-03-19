@@ -17,6 +17,16 @@ export const getUsers = createAsyncThunk('user/getUsers', async () => {
     return await users;
 });
 
+//user pagination
+
+export const getUsersPagination = createAsyncThunk(
+    'user/getUsersPagination',
+    async (page: number) => {
+        const users = await userService.getUsersPagination(page);
+        return await users;
+    },
+);
+
 //create our slice
 
 export const userSlice = createSlice({
@@ -45,6 +55,22 @@ export const userSlice = createSlice({
                 state.isSuccess = true;
             })
             .addCase(getUsers.rejected, (state) => {
+                state.isLoading = false;
+                state.isError = true;
+                state.isSuccess = false;
+            })
+            .addCase(getUsersPagination.pending, (state) => {
+                state.isLoading = true;
+                state.isError = false;
+                state.isSuccess = false;
+            })
+            .addCase(getUsersPagination.fulfilled, (state, action) => {
+                state.users = action.payload;
+                state.isLoading = false;
+                state.isError = false;
+                state.isSuccess = true;
+            })
+            .addCase(getUsersPagination.rejected, (state) => {
                 state.isLoading = false;
                 state.isError = true;
                 state.isSuccess = false;
