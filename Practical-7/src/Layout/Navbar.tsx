@@ -1,10 +1,9 @@
 import React, {FC} from 'react';
 import {useNavigate, Link} from 'react-router-dom';
-import {Menu, Transition} from '@headlessui/react';
 
 const Navbar: FC = () => {
     const navigate = useNavigate();
-    const [navbarOpen, setNavbarOpen] = React.useState(true);
+    const [navbarOpen, setNavbarOpen] = React.useState(false);
 
     return (
         <>
@@ -30,31 +29,24 @@ const Navbar: FC = () => {
                             )}
                         </button>
                     </div>
-                    <Transition
-                        show={navbarOpen}
-                        enter="transition-opacity ease-linear duration-300"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="transition-opacity ease-linear duration-300"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0">
-                        <div
-                            className={
-                                'lg:flex flex-grow  items-center' +
-                                (navbarOpen ? ' flex' : ' hidden')
-                            }
-                            id="example-navbar-danger">
-                            <ul className="flex flex-col sticky top-0 z-40 list-none  lg:flex-row lg:ml-auto">
-                                <li className="nav-item">
-                                    <Link
-                                        className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
-                                        to="/">
-                                        <i className="text-lg text-white opacity-75 fas fa-home leading-lg"></i>
-                                        <span className="ml-2">Home</span>
-                                    </Link>
-                                </li>
-                                <li
-                                    className="nav-item
+
+                    <div
+                        className={
+                            'lg:flex flex-grow  items-center' +
+                            (navbarOpen ? ' flex' : ' hidden')
+                        }
+                        id="example-navbar-danger">
+                        <ul className="flex flex-col sticky top-0 z-40 list-none  lg:flex-row lg:ml-auto">
+                            <li className="nav-item">
+                                <Link
+                                    className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                                    to="/">
+                                    <i className="text-lg text-white opacity-75 fas fa-home leading-lg"></i>
+                                    <span className="ml-2">Home</span>
+                                </Link>
+                            </li>
+                            <li
+                                className="nav-item
                                 cursor-pointer
                                 flex
                                 items-center
@@ -66,12 +58,12 @@ const Navbar: FC = () => {
                                 text-white
                                 uppercase
                                 hover:opacity-75"
-                                    onClick={() => navigate('/deploy')}>
-                                    <i className="text-lg text-white opacity-75  fa fa-globe"></i>
-                                    <span className="ml-2">Deploy</span>
-                                </li>
-                                <li
-                                    className="nav-item
+                                onClick={() => navigate('/deploy')}>
+                                <i className="text-lg text-white opacity-75  fa fa-globe"></i>
+                                <span className="ml-2">Deploy</span>
+                            </li>
+                            <li
+                                className="nav-item
                                 cursor-pointer
                                 flex
                                 items-center
@@ -83,12 +75,12 @@ const Navbar: FC = () => {
                                 text-white
                                 uppercase
                                 hover:opacity-75"
-                                    onClick={() => navigate('/users')}>
-                                    <i className="text-lg text-white opacity-75  fa fa-user"></i>
-                                    <span className="ml-2">Users</span>
-                                </li>
-                                <li
-                                    className="nav-item
+                                onClick={() => navigate('/users')}>
+                                <i className="text-lg text-white opacity-75  fa fa-user"></i>
+                                <span className="ml-2">Users</span>
+                            </li>
+                            <li
+                                className="nav-item
                                 cursor-pointer
                                 flex
                                 items-center
@@ -100,12 +92,12 @@ const Navbar: FC = () => {
                                 text-white
                                 uppercase
                                 hover:opacity-75"
-                                    onClick={() => navigate('/userPagination')}>
-                                    <i className="text-lg text-white opacity-75  fas fa-pager"></i>
-                                    <span className="ml-2">Pagination</span>
-                                </li>
-                                <li
-                                    className="nav-item
+                                onClick={() => navigate('/userPagination')}>
+                                <i className="text-lg text-white opacity-75  fas fa-pager"></i>
+                                <span className="ml-2">Pagination</span>
+                            </li>
+                            <li
+                                className="nav-item
                                 flex
                                 items-center
                                 cursor-pointer
@@ -117,27 +109,26 @@ const Navbar: FC = () => {
                                 text-white
                                 uppercase
                                 hover:opacity-75"
-                                    onClick={() => navigate('/todos')}>
-                                    <i className="text-lg text-white opacity-75 fa-solid fa-list-check"></i>
-                                    <span className="ml-2">Todo</span>
-                                </li>
-                                <li
-                                    className="nav-item flex items-center px-3 cursor-pointer py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
-                                    onClick={() => navigate('/ipinfo')}>
-                                    <i className="text-lg text-white opacity-75 fas fa-server"></i>
-                                    <span className="ml-2">IpInfo</span>
-                                </li>
-                                <li className="nav-item">
-                                    <Link
-                                        className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
-                                        to="/about">
-                                        <i className="text-lg text-white opacity-75 fas fa-question leading-lg"></i>
-                                        <span className="ml-2">About</span>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </Transition>
+                                onClick={() => navigate('/todos')}>
+                                <i className="text-lg text-white opacity-75 fa-solid fa-list-check"></i>
+                                <span className="ml-2">Todo</span>
+                            </li>
+                            <li
+                                className="nav-item flex items-center px-3 cursor-pointer py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                                onClick={() => navigate('/ipinfo')}>
+                                <i className="text-lg text-white opacity-75 fas fa-server"></i>
+                                <span className="ml-2">IpInfo</span>
+                            </li>
+                            <li className="nav-item">
+                                <Link
+                                    className="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75"
+                                    to="/about">
+                                    <i className="text-lg text-white opacity-75 fas fa-question leading-lg"></i>
+                                    <span className="ml-2">About</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </>
