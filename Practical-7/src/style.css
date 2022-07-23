@@ -1,0 +1,143 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+body {
+    height: 100vh;
+    overflow-y: auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu,
+        Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #eeeeee;
+    scroll-behavior: smooth;
+}
+
+.mainBox {
+    height: 450px;
+    min-width: 300px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 100%;
+    width: 800px;
+}
+
+.profile-card {
+    transition: all 300ms ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hide {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.ip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0%;
+    padding: 20px;
+    line-height: 1.5rem;
+}
+
+.btn_Add {
+    border-radius: 50%;
+    color: #58a758;
+    background-color: rgb(0, 230, 110);
+}
+
+.items {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+.iph h4 {
+    color: #ffc900;
+    margin-bottom: 10px;
+    width: fit-content;
+    background-color: #362222;
+    border-radius: 5px;
+    padding-right: 10px;
+}
+h4:hover {
+    opacity: 95;
+}
+/* span {
+    color: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #072227;
+    transition: 0.5s ease;
+} */
+/* span:hover {
+    cursor: pointer;
+    background-color: #524a4e;
+} */
+
+.todo {
+    background-color: #eeedde;
+    height: 100vh;
+}
+
+.input-search {
+    padding: 0 16px;
+    outline: none;
+    border: none;
+    height: 38px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #3c3c3c;
+}
+@media (max-width: 780px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        height: 400px;
+        margin-bottom: 40px;
+    }
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+}
